@@ -1,0 +1,49 @@
+
+#include <ctime>
+#include <stdlib.h>
+#include <stdio.h>
+#include <iostream>
+// template <typename T>
+// добавить шаблон матрицы
+
+using namespace std;
+const int N = 4;
+void summ (int arr[N][N], int arr2[N][N])
+{
+    int arr3[N][N];
+     for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) 
+            arr3[i][j] = arr[i][j] + arr2[i][j];
+        }
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) 
+             if ( j = N-1 ) {
+            printf("\n"); }
+            printf("%d ", arr3[i][j]);
+            }
+    }
+}
+int main() {
+    
+    srand(time(0));
+    int s1 = 1;
+    int e1 = 100;
+    int i = 0;
+    int a[N][N];
+    int b[N][N];
+    for(int n = 0; n<N; n++)
+    {
+        for(int m = 0; m<N; m++)
+        {
+            a[n][m] = rand()%(e1-s1+1)+s1;
+        }
+    }
+    for(int n = 0; n<N; n++)
+    {
+        for(int m = 0; m<N; m++)
+        {
+            b[n][m] = rand()%(e1-s1+1)+s1;
+        }
+    }
+    summ(a, b);
+}
